@@ -1,14 +1,15 @@
 import NewExpensesForm from "./NewExpensesForm";
 import './NewExpenses.css'
 
-const NewExpenses = ()=>{
+const NewExpenses = (props)=>{
 
     const saveHandeler  = (data)=>{
         const expenseData = {
-            ...data,
-            id: Math.random(),
-        }
-        console.log(expenseData);
+          id: Math.random().toString(),
+          ...data,
+        };
+        // console.log(expenseData);
+        props.onNewDataHandeler(expenseData);
     }
 
     return (
